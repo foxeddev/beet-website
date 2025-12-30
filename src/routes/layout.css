@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-sans: 'DM Sans';
+	--font-mono: 'DM Mono';
+
+	--color-foreground: #f7f7f7;
+	--color-background: #0a0507;
+	--color-primary: #d62451;
+	--color-secondary: #de7f8f;
+	--color-accent: #711930;
+}
