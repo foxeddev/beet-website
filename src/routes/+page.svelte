@@ -30,7 +30,7 @@
 		</h2>
 	</div>
 
-	<div class="flex justify-center">
+	<div class="flex justify-center gap-8">
 		<div class="flex bg-background">
 			<p
 				class="absolute px-8 py-4 outline-0 font-mono text-foreground text-2xl pointer-events-none select-none"
@@ -88,6 +88,12 @@
 				{/if}
 			</button>
 		</div>
+		<a
+			class="bg-accent px-8 py-4 overflow-hidden font-sans text-foreground text-2xl hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 duration-75 cursor-pointer"
+			href="https://mcbeet.dev/"
+		>
+			Docs
+		</a>
 	</div>
 
 	<img src={logo} alt="" class="bottom-0 left-1/2 fixed size-96 -translate-x-1/2" />
