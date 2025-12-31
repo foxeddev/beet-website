@@ -19,21 +19,23 @@
 </script>
 
 <div
-	class="space-y-20 selection:bg-primary bg-radial-[at_50%_90%] from-accent to-75% to-background p-24 w-full min-h-screen"
+	class="space-y-8 md:space-y-20 selection:bg-primary bg-radial-[at_50%_90%] from-accent to-75% to-background py-4 md:py-6 xl:py-20 w-full min-h-screen"
 >
 	<div>
-		<h1 class="text-[12rem] text-foreground text-center leading-none tracking-wider">
+		<h1
+			class="text-foreground xl:text-[12rem] text-9xl text-center leading-30 md:leading-none tracking-wider"
+		>
 			Meet <span class="font-bold text-primary selection:text-accent">Beet</span>
 		</h1>
-		<h2 class="font-medium text-secondary text-5xl text-center tracking-wider">
+		<h2 class="font-medium text-secondary text-2xl md:text-4xl text-center tracking-wider">
 			The Minecraft pack development kit
 		</h2>
 	</div>
 
-	<div class="flex justify-center gap-8">
+	<div class="flex md:flex-row flex-col justify-center gap-2 md:gap-8 m-auto w-fit">
 		<div class="flex bg-background">
 			<p
-				class="absolute px-8 py-4 outline-0 font-mono text-foreground text-2xl pointer-events-none select-none"
+				class="absolute py-3 md:py-4 pl-4 md:pl-8 outline-0 font-mono text-foreground text-md md:text-2xl pointer-events-none select-none"
 			>
 				$
 			</p>
@@ -41,10 +43,10 @@
 				type="text"
 				value="pip install beet"
 				readonly
-				class="py-4 pl-16 outline-0 font-mono text-foreground text-2xl"
+				class="py-3 md:py-4 pl-8 md:pl-16 outline-0 font-mono text-foreground text-md md:text-2xl"
 			/>
 			<button
-				class="relative bg-primary size-16 overflow-hidden font-sans text-foreground text-2xl hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 duration-75 cursor-pointer"
+				class="relative bg-primary size-12 md:size-16 overflow-hidden font-sans text-foreground text-2xl hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 duration-75 cursor-pointer"
 				onclick={handleCopy}
 				title="Copy"
 			>
@@ -54,7 +56,7 @@
 						width="24"
 						height="24"
 						viewBox="0 0 24 24"
-						class="top-4 left-4 absolute size-8"
+						class="top-3 md:top-4 left-3 md:left-4 absolute size-6 md:size-8"
 						transition:fly={{ y: '100%' }}
 					>
 						<g fill="none" stroke="currentColor" stroke-width="1.5">
@@ -73,7 +75,7 @@
 						width="24"
 						height="24"
 						viewBox="0 0 24 24"
-						class="top-4 left-4 absolute size-8"
+						class="top-3 md:top-4 left-3 md:left-4 absolute size-6 md:size-8"
 						transition:fly={{ y: '-100%' }}
 					>
 						<path
@@ -89,12 +91,12 @@
 			</button>
 		</div>
 		<a
-			class="bg-accent px-8 py-4 overflow-hidden font-sans text-foreground text-2xl hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 duration-75 cursor-pointer"
+			class="bg-accent px-4 md:px-8 py-3 md:py-4 overflow-hidden font-sans text-foreground text-md md:text-2xl text-center hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 duration-75 cursor-pointer"
 			href="https://mcbeet.dev/"
 		>
 			Docs
 		</a>
 	</div>
 
-	<img src={logo} alt="" class="bottom-0 left-1/2 fixed size-96 -translate-x-1/2" />
+	<img src={logo} alt="" class="bottom-0 left-1/2 fixed size-48 md:size-96 -translate-x-1/2" />
 </div>
