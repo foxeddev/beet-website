@@ -73,7 +73,10 @@ Done!`;
 	});
 </script>
 
-<div id="body" class="selection:bg-primary bg-radial-[at_50%_90%] from-accent to-75% to-background">
+<div
+	id="body"
+	class="selection:bg-primary bg-radial-[at_50vw_85vh] from-accent to-75% to-background"
+>
 	<header class="space-y-8 md:space-y-20 py-4 md:py-6 xl:py-20 w-full h-screen">
 		<div>
 			<h1
