@@ -169,7 +169,11 @@ Done!`;
 			</a>
 		</div>
 
-		<img src={logo} alt="" class="bottom-0 left-1/2 absolute size-48 md:size-96 -translate-x-1/2" />
+		<img
+			src={logo}
+			alt="Beet logo"
+			class="bottom-0 left-1/2 absolute drop-shadow-2xl drop-shadow-primary/25 size-48 md:size-96 -translate-x-1/2"
+		/>
 	</header>
 	<footer class="space-y-8 md:space-y-20 py-4 md:py-6 xl:py-20">
 		<pre
