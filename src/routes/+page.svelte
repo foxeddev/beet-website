@@ -15,11 +15,9 @@
 
 	import { onMount, tick } from 'svelte';
 
-	let el: HTMLPreElement;
-	let visible = false;
-	let output = '';
-
-	const text = `$ beet build
+	let consoleComponent: HTMLElement;
+	let consoleVisible = false;
+	const consoleText = `$ beet build
 
 Building project...
 
@@ -42,36 +40,18 @@ Website:
 
 Done!`;
 
-	async function typewriter() {
-		for (const char of text) {
-			const stickToBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 25;
-
-			output += char;
-
-			if (stickToBottom) {
-				await tick();
-				window.scrollTo(0, document.body.scrollHeight);
-			}
-
-			await new Promise((r) =>
-				setTimeout(r, char == '\n' ? Math.random() * 200 : Math.random() * 100)
-			);
-		}
-	}
-
 	onMount(() => {
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				if (entry.isIntersecting && !visible) {
-					visible = true;
+				if (entry.isIntersecting && !consoleVisible) {
+					consoleVisible = true;
 					observer.disconnect();
-					typewriter();
 				}
 			},
-			{ threshold: 0.3 }
+			{ threshold: 0 }
 		);
 
-		observer.observe(el);
+		observer.observe(consoleComponent);
 	});
 </script>
 
@@ -164,15 +144,21 @@ Done!`;
 		/>
 	</header>
 	<footer class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20">
-		<div class="m-auto max-w-3xl">
+		<div
+			class="m-auto max-w-3xl"
+			bind:this={consoleComponent}
+		>
 			<div class="flex gap-3 bg-gray-900/50 p-3 w-full">
 				<div class="bg-red-500 rounded-full size-4"></div>
 				<div class="bg-yellow-400 rounded-full size-4"></div>
 				<div class="bg-green-400 rounded-full size-4"></div>
 			</div>
-			<pre
-				class="bg-background/50 p-8 font-mono text-foreground text-md leading-snug"
-				bind:this={el}>{output}</pre>
+			{#if consoleVisible}
+				<Typewriter
+					class="bg-background/50 p-8 font-mono text-foreground text-md leading-snug"
+					text={consoleText}
+				></Typewriter>
+			{/if}
 		</div>
 	</footer>
 </div>
