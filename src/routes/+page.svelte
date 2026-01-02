@@ -79,7 +79,7 @@ Done!`;
 	id="body"
 	class="selection:bg-primary bg-radial-[at_50vw_85vh] from-accent to-75% to-background"
 >
-	<header class="space-y-8 md:space-y-20 py-4 md:py-6 xl:py-20 w-full h-screen">
+	<header class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20 w-full h-screen">
 		<div>
 			<h1
 				class="text-foreground xl:text-[12rem] text-9xl text-center leading-30 md:leading-none tracking-wider"
@@ -174,12 +174,12 @@ Done!`;
 		<img
 			src={logo}
 			alt="Beet logo"
-			class="bottom-0 left-1/2 absolute drop-shadow-2xl drop-shadow-primary/25 size-48 md:size-96 -translate-x-1/2"
+			class="bottom-0 left-1/2 absolute drop-shadow-2xl drop-shadow-primary/25 h-1/3 -translate-x-1/2"
 		/>
 	</header>
-	<footer class="space-y-8 md:space-y-20 py-4 md:py-6 xl:py-20">
-		<pre
-			class="bg-background/75 m-auto p-8 font-mono text-foreground text-md leading-snug prose"
-			bind:this={el}>{output}</pre>
+	<footer class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20">
+		<div class="bg-background/75 m-auto p-8 max-w-3xl font-mono text-foreground text-md leading-snug">
+			<pre bind:this={el}>{output}</pre>
+		</div>
 	</footer>
 </div>
