@@ -1,5 +1,6 @@
 <script lang="ts">
 	import logo from "$lib/assets/beet.png"
+	import { page } from '$app/state';
 </script>
 
 <div
@@ -11,10 +12,10 @@
 			<h1
 				class="font-bold text-primary xl:text-[12rem] selection:text-accent text-9xl text-center leading-30 md:leading-none tracking-wider"
 			>
-				404
+				{page.status}
 			</h1>
 			<h2 class="font-medium text-secondary text-2xl md:text-4xl text-center tracking-wider">
-				Not found
+				{page.error?.message}
 			</h2>
 		</div>
 
