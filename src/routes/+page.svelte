@@ -178,8 +178,15 @@ Done!`;
 		/>
 	</header>
 	<footer class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20">
-		<div class="bg-background/75 m-auto p-8 max-w-3xl font-mono text-foreground text-md leading-snug">
-			<pre bind:this={el}>{output}</pre>
+		<div class="m-auto max-w-3xl">
+			<div class="flex gap-3 bg-gray-900/50 p-3 w-full">
+				<div class="bg-red-500 rounded-full size-4"></div>
+				<div class="bg-yellow-400 rounded-full size-4"></div>
+				<div class="bg-green-400 rounded-full size-4"></div>
+			</div>
+			<pre
+				class="bg-background/50 p-8 font-mono text-foreground text-md leading-snug"
+				bind:this={el}>{output}</pre>
 		</div>
 	</footer>
 </div>
