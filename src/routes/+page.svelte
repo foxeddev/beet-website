@@ -49,11 +49,13 @@ Done!`;
 			output += char;
 
 			if (stickToBottom) {
-				await tick(); // wait for DOM update
+				await tick();
 				window.scrollTo(0, document.body.scrollHeight);
 			}
 
-			await new Promise((r) => setTimeout(r, Math.random() * 50));
+			await new Promise((r) =>
+				setTimeout(r, char == '\n' ? Math.random() * 200 : Math.random() * 100)
+			);
 		}
 	}
 
