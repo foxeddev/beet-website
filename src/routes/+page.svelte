@@ -1,19 +1,7 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition';
 	import logo from '$lib/assets/beet.png';
-
-	let copied = false;
-
-	function handleCopy() {
-		navigator.clipboard.writeText('pip install beet');
-		copied = true;
-
-		setTimeout(() => {
-			copied = false;
-		}, 5000);
-	}
-
-	import { onMount, tick } from 'svelte';
+	import { onMount } from 'svelte';
+	import Typewriter from '$lib/components/Typewriter.svelte';
 
 	let consoleComponent: HTMLElement;
 	let consoleVisible = false;
@@ -72,63 +60,12 @@ Done!`;
 		</div>
 
 		<div class="flex md:flex-row flex-col justify-center gap-2 md:gap-8 m-auto w-fit">
-			<div class="flex bg-background">
-				<p
-					class="absolute py-3 md:py-4 pl-4 md:pl-8 outline-0 font-mono text-foreground text-md md:text-2xl pointer-events-none select-none"
-				>
-					$
-				</p>
-				<input
-					type="text"
-					value="pip install beet"
-					readonly
-					class="py-3 md:py-4 pl-8 md:pl-16 outline-0 font-mono text-foreground text-md md:text-2xl"
-				/>
-				<button
-					class="relative bg-primary size-12 md:size-16 overflow-hidden font-sans text-foreground text-2xl hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 duration-75 cursor-pointer"
-					onclick={handleCopy}
-					title="Copy"
-				>
-					{#if !copied}
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							class="top-3 md:top-4 left-3 md:left-4 absolute size-6 md:size-8"
-							transition:fly={{ y: '100%' }}
-						>
-							<g fill="none" stroke="currentColor" stroke-width="1.5">
-								<path
-									d="M6 11c0-2.828 0-4.243.879-5.121C7.757 5 9.172 5 12 5h3c2.828 0 4.243 0 5.121.879C21 6.757 21 8.172 21 11v5c0 2.828 0 4.243-.879 5.121C19.243 22 17.828 22 15 22h-3c-2.828 0-4.243 0-5.121-.879C6 20.243 6 18.828 6 16z"
-								/>
-								<path
-									d="M6 19a3 3 0 0 1-3-3v-6c0-3.771 0-5.657 1.172-6.828S7.229 2 11 2h4a3 3 0 0 1 3 3"
-								/>
-							</g>
-						</svg>
-					{/if}
-					{#if copied}
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							class="top-3 md:top-4 left-3 md:left-4 absolute size-6 md:size-8"
-							transition:fly={{ y: '-100%' }}
-						>
-							<path
-								fill="none"
-								stroke="currentColor"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="1.5"
-								d="m7 12.9l3.143 3.6L18 7.5"
-							/>
-						</svg>
-					{/if}
-				</button>
-			</div>
+			<a
+				class="flex justify-center items-center gap-1 md:gap-2 bg-primary px-4 md:px-8 py-3 md:py-4 font-sans text-foreground text-md md:text-2xl text-center hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 duration-75 cursor-pointer"
+				href="https://mcbeet.dev/getting_started/"
+			>
+				Get Started
+			</a>
 			<a
 				class="flex justify-center items-center gap-1 md:gap-2 bg-accent px-4 md:px-8 py-3 md:py-4 font-sans text-foreground text-md md:text-2xl text-center hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 duration-75 cursor-pointer"
 				href="https://mcbeet.dev/"
