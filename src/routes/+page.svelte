@@ -55,7 +55,7 @@
 	</header>
 	<main>
 		<section class="space-y-16 p-8 md:p-12 xl:p-20">
-			<h2 class="text-foreground text-8xl text-center">
+			<h2 class="text-foreground text-5xl md:text-7xl xl:text-8xl text-center">
 				Un<span class="font-bold text-primary selection:text-accent">beet</span>able Features
 			</h2>
 			<div class="flex flex-col gap-4 m-auto max-w-3xl">
