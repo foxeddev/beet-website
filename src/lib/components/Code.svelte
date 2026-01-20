@@ -4,4 +4,4 @@
 
 <pre
 	{...props}
-	class={`text-md w-full overflow-scroll bg-background/50 p-8 font-mono leading-snug text-foreground ${className}`}>{@render children?.()}</pre>
+	class={`text-md w-full overflow-scroll bg-background/50 md:p-8 p-4 font-mono leading-snug text-foreground ${className}`}>{@render children?.()}</pre>
