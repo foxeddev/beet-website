@@ -21,7 +21,9 @@
 				class={`size-4 rounded-full bg-green-400 ${highlighted ? 'ring-5 ring-gray-900' : ''}`}
 			></div>
 		</div>
-		<p class={`text-foreground ${highlighted ? 'selection:bg-accent!' : ''}`}>{title}</p>
+		<p class={`overflow-scroll text-foreground ${highlighted ? 'selection:bg-accent!' : ''}`}>
+			{title}
+		</p>
 	</div>
 	{@render children?.()}
 </div>
