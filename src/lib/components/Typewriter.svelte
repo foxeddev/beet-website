@@ -1,24 +1,19 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 
-	export let text: string;
-	export let startOnVisible: boolean;
-	let isVisible = false;
+	let { text, ...props } = $props();
 
-	const getCharDelay = () => {
-		return Math.random() * 50;
-	};
-	const getNewlineDelay = () => {
-		return Math.random() * 100;
-	};
+	let el: HTMLElement;
+	let output = $state('');
+	let running = false;
 
-	let el: HTMLPreElement;
-	let output = '';
-	let stickToBottom = false;
+	const getCharDelay = () => Math.random() * 50;
+	const getNewlineDelay = () => Math.random() * 100;
 
 	async function run() {
 		for (const char of text) {
-			stickToBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 25;
+			if (!running) return;
+			const stickToBottom = window.scrollY + window.innerHeight >= document.body.scrollHeight - 25;
 			output += char;
 			await tick();
 			if (stickToBottom) window.scrollTo(0, document.body.scrollHeight);
@@ -27,23 +22,18 @@
 	}
 
 	onMount(() => {
-		if (startOnVisible) {
-			const observer = new IntersectionObserver(
-				([entry]) => {
-					if (entry.isIntersecting && !isVisible) {
-						isVisible = true;
-						run();
-						observer.disconnect();
-					}
-				},
-				{ threshold: 0 }
-			);
+		const observer = new IntersectionObserver(([entry]) => {
+			if (entry.isIntersecting && !running) {
+				running = true;
+				run();
+			} else if (!entry.isIntersecting && running) {
+				running = false;
+				output = '';
+			}
+		});
 
-			observer.observe(el);
-		} else {
-			run();
-		}
+		observer.observe(el);
 	});
 </script>
 
-<pre bind:this={el} {...$$restProps}>{output}</pre>
+<span bind:this={el} {...props}>{output}</span>

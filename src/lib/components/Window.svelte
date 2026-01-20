@@ -1,8 +1,21 @@
-<div {...$$restProps}>
-	<div class="flex gap-3 bg-gray-900/50 p-3 w-full">
-		<div class="bg-red-500 rounded-full size-4 hover:scale-150 transition"></div>
-		<div class="bg-yellow-400 rounded-full size-4 hover:scale-150 transition"></div>
-		<div class="bg-green-400 rounded-full size-4 hover:scale-150 transition"></div>
+<script lang="ts">
+	let { children = null, title = '', highlighted = false, ...props } = $props();
+</script>
+
+<div {...props} class="bg-gray-900/50">
+	<div class={`flex w-full items-center gap-5 p-2.5 ${highlighted ? 'bg-primary' : 'bg-gray-900'}`}>
+		<div class={'flex gap-2'}>
+			<div
+				class="bg-red-500 shadow shadow-gray-900 rounded-full size-4 hover:scale-120 transition"
+			></div>
+			<div
+				class="bg-yellow-400 shadow shadow-gray-900 rounded-full size-4 hover:scale-120 transition"
+			></div>
+			<div
+				class="bg-green-400 shadow shadow-gray-900 rounded-full size-4 hover:scale-120 transition"
+			></div>
+		</div>
+		<p class={`text-foreground ${highlighted ? 'selection:bg-accent!' : ''}`}>{title}</p>
 	</div>
-	<slot></slot>
+	{@render children?.()}
 </div>

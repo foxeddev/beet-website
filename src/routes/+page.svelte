@@ -1,35 +1,24 @@
 <script lang="ts">
 	import logo from '$lib/assets/beet.png';
+	import Code from '$lib/components/Code.svelte';
 	import Typewriter from '$lib/components/Typewriter.svelte';
 	import Window from '$lib/components/Window.svelte';
+	import { onMount } from 'svelte';
 
-	const consoleText = `$ beet build
+	let credits = '';
+	let for_loop_beet = '';
+	let for_loop_vanilla = '';
 
-Building project...
-
-Maintainers:
-* vberlier
-* rx
-* edayot
-* misode
-
-Contributors:
-* ritikshah
-* MichaelBrunn3r
-* TheNuclearNexus
-* Tracktark
-* Newtbytes
-* and more!
-
-Website:
-* FoxedDev
-
-Done!`;
+	onMount(async () => {
+		credits = await fetch('/code/credits.md').then((r) => r.text());
+		for_loop_beet = await fetch('/code/for_loop/beet.mcfunction').then((r) => r.text());
+		for_loop_vanilla = await fetch('/code/for_loop/vanilla.mcfunction').then((r) => r.text());
+	});
 </script>
 
 <div
-	id="body"
-	class="selection:bg-primary bg-radial-[at_50vw_85vh] from-accent to-75% to-background"
+	id="wrapper"
+	class="space-y-32 selection:bg-primary bg-radial-[at_50vw_85vh] from-accent to-75% to-background"
 >
 	<header class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20 w-full h-screen">
 		<div>
@@ -64,13 +53,26 @@ Done!`;
 			class="bottom-0 left-1/2 absolute drop-shadow-2xl drop-shadow-primary/25 h-1/3 -translate-x-1/2"
 		/>
 	</header>
+	<main>
+		<section class="space-y-16 p-8 md:p-12 xl:p-20">
+			<h2 class="text-foreground text-8xl text-center">
+				Un<span class="font-bold text-primary selection:text-accent">beet</span>able Features
+			</h2>
+			<div class="flex flex-col gap-4 m-auto max-w-3xl">
+				<Window title="for_loop_with_beet.mcfunction" highlighted>
+					<Code>{for_loop_beet}</Code>
+				</Window>
+				<Window title="for_loop_without_beet.mcfunction" class="mx-10">
+					<Code>{for_loop_vanilla}</Code>
+				</Window>
+			</div>
+		</section>
+	</main>
 	<footer class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20">
-		<Window class="m-auto max-w-3xl">
-			<Typewriter
-				class="bg-background/50 p-8 font-mono text-foreground text-md leading-snug"
-				text={consoleText}
-				startOnVisible
-			></Typewriter>
+		<Window class="m-auto max-w-3xl" title="credits.md">
+			<Code>
+				<Typewriter text={credits}></Typewriter>
+			</Code>
 		</Window>
 	</footer>
 </div>
