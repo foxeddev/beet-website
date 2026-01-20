@@ -60,15 +60,15 @@
 			</h2>
 			<div class="flex flex-col gap-4 m-auto max-w-3xl">
 				<Window title="for_loop.mcfunction">
-					<Code>{for_loop_beet}</Code>
-					<Code>{for_loop_vanilla}</Code>
+					<Code class="bg-transparent">{for_loop_beet}</Code>
+					<Code class="bg-transparent">{for_loop_vanilla}</Code>
 				</Window>
 			</div>
 		</section>
 	</main>
 	<footer class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20">
 		<Window class="m-auto max-w-3xl" title="credits.md">
-			<Code>
+			<Code class="bg-transparent">
 				<Typewriter text={credits}></Typewriter>
 			</Code>
 		</Window>
