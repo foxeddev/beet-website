@@ -61,6 +61,25 @@
 			<div class="flex flex-col gap-4 m-auto max-w-3xl">
 				<Window title="for_loop.mcfunction">
 					<Code class="bg-transparent">{for_loop_beet}</Code>
+					<div class="relative bg-primary m-auto rounded-full w-3/4 h-1">
+						<p
+							class="top-1/2 left-1/2 absolute flex items-center gap-1 md:gap-2 bg-primary selection:bg-accent! shadow shadow-primary/50 hover:shadow-lg px-3 md:px-4 py-1 md:py-2 rounded-full text-foreground hover:scale-110 transition -translate-1/2 cursor-pointer"
+						>
+							Generates
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="1024"
+								height="1024"
+								viewBox="0 0 1024 1024"
+								class="size-4"
+							>
+								<path
+									fill="currentColor"
+									d="M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8l316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496"
+								/>
+							</svg>
+						</p>
+					</div>
 					<Code class="bg-transparent">{for_loop_vanilla}</Code>
 				</Window>
 			</div>
