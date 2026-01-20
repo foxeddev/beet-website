@@ -2,6 +2,8 @@
 	import { onMount, tick } from 'svelte';
 
 	export let text: string;
+	export let startOnVisible: boolean;
+	let isVisible = false;
 
 	const getCharDelay = () => {
 		return Math.random() * 50;
@@ -24,7 +26,24 @@
 		}
 	}
 
-	onMount(run);
+	onMount(() => {
+		if (startOnVisible) {
+			const observer = new IntersectionObserver(
+				([entry]) => {
+					if (entry.isIntersecting && !isVisible) {
+						isVisible = true;
+						run();
+						observer.disconnect();
+					}
+				},
+				{ threshold: 0 }
+			);
+
+			observer.observe(el);
+		} else {
+			run();
+		}
+	});
 </script>
 
-<pre bind:this={el} class="whitespace-pre-wrap" {...$$restProps}>{output}</pre>
+<pre bind:this={el} {...$$restProps}>{output}</pre>

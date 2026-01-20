@@ -1,10 +1,8 @@
 <script lang="ts">
 	import logo from '$lib/assets/beet.png';
-	import { onMount } from 'svelte';
 	import Typewriter from '$lib/components/Typewriter.svelte';
+	import Window from '$lib/components/Window.svelte';
 
-	let consoleComponent: HTMLElement;
-	let consoleVisible = false;
 	const consoleText = `$ beet build
 
 Building project...
@@ -27,20 +25,6 @@ Website:
 * FoxedDev
 
 Done!`;
-
-	onMount(() => {
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting && !consoleVisible) {
-					consoleVisible = true;
-					observer.disconnect();
-				}
-			},
-			{ threshold: 0 }
-		);
-
-		observer.observe(consoleComponent);
-	});
 </script>
 
 <div
@@ -59,15 +43,15 @@ Done!`;
 			</h2>
 		</div>
 
-		<div class="flex md:flex-row flex-col justify-center gap-2 md:gap-8 m-auto w-fit">
+		<div class="flex flex-row flex-wrap justify-center gap-2 md:gap-8 m-auto w-fit">
 			<a
-				class="flex justify-center items-center gap-1 md:gap-2 bg-primary px-4 md:px-8 py-3 md:py-4 font-sans text-foreground text-md md:text-2xl text-center hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 duration-75 cursor-pointer"
+				class="flex justify-center items-center gap-1 md:gap-2 bg-primary px-4 md:px-8 py-3 md:py-4 font-sans text-foreground text-md md:text-2xl text-center transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 cursor-pointer"
 				href="https://mcbeet.dev/getting_started/"
 			>
 				Get Started
 			</a>
 			<a
-				class="flex justify-center items-center gap-1 md:gap-2 bg-accent px-4 md:px-8 py-3 md:py-4 font-sans text-foreground text-md md:text-2xl text-center hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 duration-75 cursor-pointer"
+				class="flex justify-center items-center gap-1 md:gap-2 bg-accent px-4 md:px-8 py-3 md:py-4 font-sans text-foreground text-md md:text-2xl text-center transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 cursor-pointer"
 				href="https://mcbeet.dev/"
 			>
 				Docs
@@ -81,21 +65,12 @@ Done!`;
 		/>
 	</header>
 	<footer class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20">
-		<div
-			class="m-auto max-w-3xl"
-			bind:this={consoleComponent}
-		>
-			<div class="flex gap-3 bg-gray-900/50 p-3 w-full">
-				<div class="bg-red-500 rounded-full size-4"></div>
-				<div class="bg-yellow-400 rounded-full size-4"></div>
-				<div class="bg-green-400 rounded-full size-4"></div>
-			</div>
-			{#if consoleVisible}
-				<Typewriter
-					class="bg-background/50 p-8 font-mono text-foreground text-md leading-snug"
-					text={consoleText}
-				></Typewriter>
-			{/if}
-		</div>
+		<Window class="m-auto max-w-3xl">
+			<Typewriter
+				class="bg-background/50 p-8 font-mono text-foreground text-md leading-snug"
+				text={consoleText}
+				startOnVisible
+			></Typewriter>
+		</Window>
 	</footer>
 </div>
