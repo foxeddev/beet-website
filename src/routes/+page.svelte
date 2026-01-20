@@ -18,7 +18,7 @@
 
 <div
 	id="wrapper"
-	class="space-y-32 selection:bg-primary bg-radial-[at_50vw_85vh] from-accent to-75% to-background"
+	class="space-y-32 selection:bg-primary bg-radial-[circle_at_50vw_85vh] from-accent to-[80vh] to-background"
 >
 	<header class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20 w-full h-screen">
 		<div>
@@ -59,10 +59,8 @@
 				Un<span class="font-bold text-primary selection:text-accent">beet</span>able Features
 			</h2>
 			<div class="flex flex-col gap-4 m-auto max-w-3xl">
-				<Window title="for_loop_with_beet.mcfunction" highlighted>
+				<Window title="for_loop.mcfunction">
 					<Code>{for_loop_beet}</Code>
-				</Window>
-				<Window title="for_loop_without_beet.mcfunction" class="mx-10">
 					<Code>{for_loop_vanilla}</Code>
 				</Window>
 			</div>
