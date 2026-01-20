@@ -1,18 +1,24 @@
 <script lang="ts">
-	let { children = null, class: className = "", title = '', highlighted = false, ...props } = $props();
+	let {
+		children = null,
+		class: className = '',
+		title = '',
+		highlighted = false,
+		...props
+	} = $props();
 </script>
 
 <div {...props} class={`bg-gray-900/50 ${className}`}>
 	<div class={`flex w-full items-center gap-5 p-2.5 ${highlighted ? 'bg-primary' : 'bg-gray-900'}`}>
-		<div class={'flex gap-2'}>
+		<div class="flex gap-2">
 			<div
-				class="bg-red-500 shadow shadow-gray-900 rounded-full size-4 hover:scale-120 transition"
+				class={`size-4 rounded-full bg-red-500 ${highlighted ? 'ring-5 ring-gray-900' : ''}`}
 			></div>
 			<div
-				class="bg-yellow-400 shadow shadow-gray-900 rounded-full size-4 hover:scale-120 transition"
+				class={`size-4 rounded-full bg-yellow-400 ${highlighted ? 'ring-5 ring-gray-900' : ''}`}
 			></div>
 			<div
-				class="bg-green-400 shadow shadow-gray-900 rounded-full size-4 hover:scale-120 transition"
+				class={`size-4 rounded-full bg-green-400 ${highlighted ? 'ring-5 ring-gray-900' : ''}`}
 			></div>
 		</div>
 		<p class={`text-foreground ${highlighted ? 'selection:bg-accent!' : ''}`}>{title}</p>
