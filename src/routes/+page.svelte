@@ -4,6 +4,7 @@
 	import Typewriter from '$lib/components/Typewriter.svelte';
 	import Window from '$lib/components/Window.svelte';
 	import { onMount } from 'svelte';
+	import { asset } from '$app/paths';
 
 	let credits = '';
 	let for_loop_beet = '';
@@ -11,8 +12,8 @@
 
 	onMount(async () => {
 		credits = await fetch('/code/credits.md').then((r) => r.text());
-		for_loop_beet = await fetch('/code/for_loop/beet.mcfunction').then((r) => r.text());
-		for_loop_vanilla = await fetch('/code/for_loop/vanilla.mcfunction').then((r) => r.text());
+		for_loop_beet = await fetch(asset('/code/for_loop/beet.mcfunction')).then((r) => r.text());
+		for_loop_vanilla = await fetch(asset('/code/for_loop/vanilla.mcfunction')).then((r) => r.text());
 	});
 </script>
 
