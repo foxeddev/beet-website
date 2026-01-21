@@ -11,7 +11,7 @@
 	let for_loop_vanilla = '';
 
 	onMount(async () => {
-		credits = await fetch('/code/credits.md').then((r) => r.text());
+		credits = await fetch(asset'/code/credits.md')).then((r) => r.text());
 		for_loop_beet = await fetch(asset('/code/for_loop/beet.mcfunction')).then((r) => r.text());
 		for_loop_vanilla = await fetch(asset('/code/for_loop/vanilla.mcfunction')).then((r) => r.text());
 	});
