@@ -3,17 +3,9 @@
 	import Code from '$lib/components/Code.svelte';
 	import Typewriter from '$lib/components/Typewriter.svelte';
 	import Window from '$lib/components/Window.svelte';
-	import { onMount } from 'svelte';
-
-	let credits = '';
-	let for_loop_beet = '';
-	let for_loop_vanilla = '';
-
-	onMount(async () => {
-		credits = await fetch('/code/credits.md').then((r) => r.text());
-		for_loop_beet = await fetch('/code/for_loop/beet.mcfunction').then((r) => r.text());
-		for_loop_vanilla = await fetch('/code/for_loop/vanilla.mcfunction').then((r) => r.text());
-	});
+	import for_loop_beet from '$lib/content/code_examples/for_loop/beet.mcfunction?raw';
+	import for_loop_vanilla from '$lib/content/code_examples/for_loop/vanilla.mcfunction?raw';
+	import credits from '$lib/content/credits.txt?raw';
 </script>
 
 <div
