@@ -1,29 +1,25 @@
 <script lang="ts">
-	let {
-		children = null,
-		class: className = '',
-		title = '',
-		highlighted = false,
-		...props
-	} = $props();
+	let { children = null, title = '', highlighted = false, ...props } = $props();
 </script>
 
-<div {...props} class={`bg-gray-900/50 ${className}`}>
-	<div class={`flex w-full items-center gap-5 p-2.5 ${highlighted ? 'bg-primary' : 'bg-gray-900'}`}>
+<div {...props}>
+	<nav
+		class={`flex w-full items-center gap-5 p-2.5 ${highlighted ? 'bg-bg-highlight selection:bg-selection-highlight!' : 'bg-bg-secondary selection:bg-selection-secondary'}`}
+	>
 		<div class="flex gap-2">
 			<div
-				class={`size-4 rounded-full bg-red-500 ${highlighted ? 'ring-5 ring-gray-900' : ''}`}
+				class={`size-4 rounded-full bg-red-500 ${highlighted ? 'ring-5 ring-bg-secondary' : ''}`}
 			></div>
 			<div
-				class={`size-4 rounded-full bg-yellow-400 ${highlighted ? 'ring-5 ring-gray-900' : ''}`}
+				class={`size-4 rounded-full bg-yellow-400 ${highlighted ? 'ring-5 ring-bg-secondary' : ''}`}
 			></div>
 			<div
-				class={`size-4 rounded-full bg-green-400 ${highlighted ? 'ring-5 ring-gray-900' : ''}`}
+				class={`size-4 rounded-full bg-green-400 ${highlighted ? 'ring-5 ring-bg-secondary' : ''}`}
 			></div>
 		</div>
-		<p class={`overflow-scroll text-foreground ${highlighted ? 'selection:bg-accent!' : ''}`}>
+		<p class="overflow-scroll">
 			{title}
 		</p>
-	</div>
+	</nav>
 	{@render children?.()}
 </div>

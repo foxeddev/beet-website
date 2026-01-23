@@ -2,12 +2,37 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
+	/* Fonts */
+
 	--font-sans: 'DM Sans';
 	--font-mono: 'DM Mono';
 
-	--color-foreground: #f7f7f7;
-	--color-background: #0a0507;
-	--color-primary: #d62451;
-	--color-secondary: #de7f8f;
-	--color-accent: #711930;
+	/* Colors */
+
+	--color-text-base: #f7f7f7;
+	--color-text-secondary: #de7f8f;
+	--color-text-highlight: #d62451;
+	--color-text-button-base: #f7f7f7;
+	--color-text-button-secondary: #f7f7f7;
+	--color-text-code-base: #f7f7f7;
+	--color-text-code-secondary: #f7f7f7;
+	--color-text-code-highlight: #d62451;
+
+	--color-selection-base: #d62451;
+	--color-selection-secondary: #d62451;
+	--color-selection-highlight: #711930;
+	--color-selection-code-base: #d62451;
+	--color-selection-code-secondary: #d62451;
+	--color-selection-code-highlight: #711930;
+
+	--color-bg-base: #0a0507;
+	--color-bg-secondary: #101828;
+	--color-bg-highlight: #d62451;
+	--color-bg-button-base: #d62451;
+	--color-bg-button-secondary: #711930;
+	--color-bg-code-base: #10182888;
+	--color-bg-code-secondary: #2a354b88;
+	--color-bg-code-highlight: #d6245188;
+
+	--color-glow: #711930;
 }
