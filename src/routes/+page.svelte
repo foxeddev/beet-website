@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { PageData } from './$types';
 	import logo from '$lib/assets/beet.png';
 	import Code from '$lib/components/Code.svelte';
 	import Typewriter from '$lib/components/Typewriter.svelte';
@@ -6,7 +7,9 @@
 	import for_loop_beet from '$lib/content/code_examples/for_loop/beet.mcfunction?raw';
 	import for_loop_vanilla from '$lib/content/code_examples/for_loop/vanilla.mcfunction?raw';
 
-	export let data;
+	const { data } = $props<{
+		data: PageData;
+	}>();
 </script>
 
 <div
