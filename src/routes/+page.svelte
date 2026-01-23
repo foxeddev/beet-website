@@ -5,7 +5,8 @@
 	import Window from '$lib/components/Window.svelte';
 	import for_loop_beet from '$lib/content/code_examples/for_loop/beet.mcfunction?raw';
 	import for_loop_vanilla from '$lib/content/code_examples/for_loop/vanilla.mcfunction?raw';
-	import credits from '$lib/content/credits.txt?raw';
+
+	export let data;
 </script>
 
 <div
@@ -80,7 +81,7 @@
 	<footer class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20">
 		<Window class="m-auto max-w-3xl" title="credits.md">
 			<Code class="bg-transparent">
-				<Typewriter text={credits}></Typewriter>
+				<Typewriter text={data.credits}></Typewriter>
 			</Code>
 		</Window>
 	</footer>
