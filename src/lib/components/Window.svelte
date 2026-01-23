@@ -17,7 +17,7 @@
 				class={`size-4 rounded-full bg-green-400 ${highlighted ? 'ring-5 ring-bg-secondary' : ''}`}
 			></div>
 		</div>
-		<p class="overflow-scroll">
+		<p class="overflow-auto">
 			{title}
 		</p>
 	</nav>
