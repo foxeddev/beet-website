@@ -7,8 +7,8 @@
 	let output = $state('');
 	let running = false;
 
-	const getCharDelay = () => Math.random() * 50;
-	const getNewlineDelay = () => Math.random() * 100;
+	const getCharDelay = () => Math.random() * 15;
+	const getNewlineDelay = () => Math.random() * 150;
 
 	async function run() {
 		for (const char of text) {
