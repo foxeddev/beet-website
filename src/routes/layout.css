@@ -15,7 +15,7 @@
 	--color-text-button-base: #f7f7f7;
 	--color-text-button-secondary: #f7f7f7;
 	--color-text-code-base: #f7f7f7;
-	--color-text-code-secondary: #f7f7f7;
+	--color-text-code-secondary: #acabab;
 	--color-text-code-highlight: #d62451;
 
 	--color-selection-base: #d62451;
@@ -35,4 +35,9 @@
 	--color-bg-code-highlight: #d62451;
 
 	--color-glow: #711930;
+}
+
+@theme {
+	--text-10xl: 10rem;
+	--text-11xl: 12rem;
 }

@@ -21,5 +21,5 @@
 			{title}
 		</p>
 	</nav>
-	{@render children?.()}
+	{@render children()}
 </div>
