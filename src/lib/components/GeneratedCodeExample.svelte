@@ -3,13 +3,13 @@
 	import Code from './Code.svelte';
 	import { slide } from 'svelte/transition';
 
-	let { class: className = '', sourceCode, outputCode, ...props } = $props();
+	let { class: className = '', title = '', sourceCode, outputCode, ...props } = $props();
 
 	let showResult = $state();
 </script>
 
 <div class={`flex flex-col gap-4  ${className}`} {...props}>
-	<Window title="for_loop.mcfunction">
+	<Window {title}>
 		<Code>{sourceCode}</Code>
 		{#if showResult}
 			<div transition:slide>

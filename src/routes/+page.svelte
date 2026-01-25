@@ -19,7 +19,7 @@
 
 <div
 	id="wrapper"
-	class="to-bg-base selection:bg-selection-base bg-radial-[circle_at_50vw_85vh] from-glow to-[80vh] text-text-base"
+	class="to-bg-base selection:bg-selection-base bg-radial-[circle_at_50vw_85vh] from-glow to-[80vh] bg-fixed text-text-base"
 >
 	<header class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20 w-full min-h-screen">
 		<!-- Title -->
@@ -46,7 +46,7 @@
 				Get Started
 			</a>
 			<a
-				class="bg-bg-button-secondary selection:bg-transparent! px-6 md:px-8 py-3 md:py-4 md:text-2xl transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 cursor-pointer"
+				class="bg-bg-button-secondary selection:bg-transparent! px-6 md:px-8 py-3 md:py-4 text-lg md:text-2xl transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 cursor-pointer"
 				href="https://mcbeet.dev/"
 			>
 				Docs
@@ -62,28 +62,50 @@
 		/>
 	</header>
 	<main>
-		<section class="space-y-8 p-8 md:p-12 xl:p-20 min-h-screen">
-			<h2 class="mx-auto max-w-4xl text-5xl md:text-7xl xl:text-8xl text-center">
-				Use
-				<span class="selection:bg-selection-highlight font-bold text-text-highlight">Python</span>
-				directly in your code
-			</h2>
+		<section
+			class="flex flex-col items-center gap-12 mx-auto p-4 max-w-prose min-h-screen text-center"
+		>
+			<div class="flex flex-col items-center gap-4">
+				<p
+					class="bg-bg-button-base selection:bg-selection-highlight px-4 py-2 transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1"
+				>
+					Powered by <span class="font-bold">Bolt</span>
+				</p>
+				<h2 class="text-5xl md:text-7xl xl:text-8xl">
+					<span class="selection:bg-selection-highlight font-bold text-text-highlight">Python</span> in
+					MCFunction
+				</h2>
+			</div>
+			<p>
+				Create reusable variables and use loops directly in your
+				<code class="bg-bg-code-base">.mcfunction</code>-files.
+			</p>
 			<GeneratedCodeExample
-				class="mx-auto w-full max-w-3xl"
+				class="w-full"
+				title="for_loop.mcfunction"
 				sourceCode={for_loop_beet}
 				outputCode={for_loop_vanilla}
-			></GeneratedCodeExample>
+			/>
 		</section>
-		<section class="space-y-8 p-8 md:p-12 xl:p-20 min-h-screen">
-			<h2 class="mx-auto max-w-4xl text-5xl md:text-7xl xl:text-8xl text-center">
-				<span class="selection:bg-selection-highlight font-bold text-text-highlight">Nest</span>
-				your commands
-			</h2>
-			<GeneratedCodeExample
-				class="mx-auto w-full max-w-3xl"
-				sourceCode={for_loop_beet}
-				outputCode={for_loop_vanilla}
-			></GeneratedCodeExample>
+		<section
+			class="flex flex-col items-center gap-12 mx-auto p-4 max-w-prose min-h-screen text-center"
+		>
+			<div class="flex flex-col items-center gap-4">
+				<p
+					class="bg-bg-button-base selection:bg-selection-highlight px-4 py-2 transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1"
+				>
+					Powered by <span class="font-bold">Bolt</span>
+				</p>
+				<h2 class="text-5xl md:text-7xl xl:text-8xl">
+					<span class="selection:bg-selection-highlight font-bold text-text-highlight">Nested</span>
+					Commands
+				</h2>
+			</div>
+			<p>
+				Stack <code class="bg-bg-code-base">/execute</code>-commands or define custom functions in a
+				single file - Beet generates the function files for you.
+			</p>
+			<GeneratedCodeExample title="TODO" class="w-full" sourceCode="TODO" outputCode="TODO" />
 		</section>
 	</main>
 	<footer class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20">
