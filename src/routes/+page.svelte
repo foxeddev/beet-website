@@ -6,13 +6,12 @@
 	import Window from '$lib/components/Window.svelte';
 	import for_loop_beet from '$lib/content/code_examples/for_loop/beet.mcfunction?raw';
 	import for_loop_vanilla from '$lib/content/code_examples/for_loop/vanilla.mcfunction?raw';
-	import { slide } from 'svelte/transition';
+	import GeneratedCodeExample from '$lib/components/GeneratedCodeExample.svelte';
 
 	const { data } = $props<{
 		data: PageData;
 	}>();
 
-	let showResult: boolean = $state(false);
 </script>
 
 <div
@@ -54,39 +53,28 @@
 		/>
 	</header>
 	<main>
-		<section class="space-y-16 p-8 md:p-12 xl:p-20 min-h-screen">
-			<h2 class="text-5xl md:text-7xl xl:text-8xl text-center">
-				Un<span class="selection:bg-selection-highlight font-bold text-text-highlight">beet</span
-				>able® Features
+		<section class="space-y-8 p-8 md:p-12 xl:p-20 min-h-screen">
+			<h2 class="mx-auto max-w-4xl text-5xl md:text-7xl xl:text-8xl text-center">
+				Use
+				<span class="selection:bg-selection-highlight font-bold text-text-highlight">Python</span>
+				directly in your code
 			</h2>
-			<div class="flex flex-col gap-4 m-auto max-w-3xl">
-				<Window title="for_loop.mcfunction">
-					<Code>{for_loop_beet}</Code>
-					{#if showResult}
-						<div transition:slide>
-							<Code type="secondary">{for_loop_vanilla}</Code>
-						</div>
-					{/if}
-				</Window>
-				<button
-					class="flex items-center gap-1 md:gap-2 m-auto px-3 md:px-4 py-1 md:py-2 w-fit cursor-pointer"
-					onclick={() => (showResult = !showResult)}
-				>
-					{showResult ? 'Hide Result' : 'Show Result'}
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="1024"
-						height="1024"
-						viewBox="0 0 1024 1024"
-						class={`size-4 transition ${showResult ? 'rotate-180' : 'rotate-0'}`}
-					>
-						<path
-							fill="currentColor"
-							d="M104.704 338.752a64 64 0 0 1 90.496 0l316.8 316.8l316.8-316.8a64 64 0 0 1 90.496 90.496L557.248 791.296a64 64 0 0 1-90.496 0L104.704 429.248a64 64 0 0 1 0-90.496"
-						/>
-					</svg>
-				</button>
-			</div>
+			<GeneratedCodeExample
+				class="mx-auto w-full max-w-3xl"
+				sourceCode={for_loop_beet}
+				outputCode={for_loop_vanilla}
+			></GeneratedCodeExample>
+		</section>
+		<section class="space-y-8 p-8 md:p-12 xl:p-20 min-h-screen">
+			<h2 class="mx-auto max-w-4xl text-5xl md:text-7xl xl:text-8xl text-center">
+				<span class="selection:bg-selection-highlight font-bold text-text-highlight">Nest</span>
+				your commands
+			</h2>
+			<GeneratedCodeExample
+				class="mx-auto w-full max-w-3xl"
+				sourceCode={for_loop_beet}
+				outputCode={for_loop_vanilla}
+			></GeneratedCodeExample>
 		</section>
 	</main>
 	<footer class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20">
