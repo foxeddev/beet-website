@@ -7,7 +7,7 @@ let contributors: string[] | undefined;
 let lastRequest = 0;
 
 export async function getCredits() {
-	if (lastRequest < Date.now() - 1000 * 60 /* One hour */) {
+	if (lastRequest < Date.now() - 1000 * 60 * 60 /* One hour */) {
 		try {
 			if (process.env.NODE_ENV === 'production') {
 				console.debug('Fetching credits from GitHub...');
@@ -58,7 +58,7 @@ export async function getCredits() {
 
 const fetchMaintainers = async () =>
 	octokit.rest.orgs
-		.listMembers({ org: 'beet' })
+		.listMembers({ org: 'mcbeet' })
 		.then((response) => response.data.filter((u) => !isBot(u)).map((u) => u.login ?? ''));
 
 const fetchContributors = async () =>
