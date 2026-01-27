@@ -58,12 +58,12 @@ export async function getCredits() {
 
 const fetchMaintainers = async () =>
 	octokit.rest.orgs
-		.listMembers({ org: 'none' })
+		.listMembers({ org: 'beet' })
 		.then((response) => response.data.filter((u) => !isBot(u)).map((u) => u.login ?? ''));
 
 const fetchContributors = async () =>
 	octokit.rest.repos
-		.listContributors({ owner: 'mcbeet', repo: 'none' })
+		.listContributors({ owner: 'mcbeet', repo: 'beet' })
 		.then((response) => response.data.filter((u) => !isBot(u)).map((u) => u.login ?? ''));
 
 const isBot = (u: { type?: string; login?: string }) =>
