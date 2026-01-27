@@ -1,17 +1,11 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import logo from '$lib/assets/beet.png';
-	import Code from '$lib/components/Code.svelte';
-	import Typewriter from '$lib/components/Typewriter.svelte';
-	import Window from '$lib/components/Window.svelte';
 	import for_loop_beet from '$lib/content/code_examples/for_loop/beet.mcfunction?raw';
 	import for_loop_vanilla from '$lib/content/code_examples/for_loop/vanilla.mcfunction?raw';
 	import GeneratedCodeExample from '$lib/components/GeneratedCodeExample.svelte';
+	import Credits from '$lib/components/Credits.svelte';
 
-	const { data } = $props<{
-		data: PageData;
-	}>();
-
+	let { data } = $props();
 	let scrollY = $state(0);
 </script>
 
@@ -19,7 +13,7 @@
 
 <div
 	id="wrapper"
-	class="to-bg-base selection:bg-selection-base bg-radial-[circle_at_50vw_85vh] from-glow to-[80vh] bg-fixed text-text-base"
+	class="to-bg-base selection:bg-selection-base bg-radial-[circle_at_50vw_100vh] from-glow to-[80vh] bg-fixed text-text-base"
 >
 	<header class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20 w-full min-h-screen">
 		<!-- Title -->
@@ -58,7 +52,7 @@
 		<img
 			src={logo}
 			alt="Beet Logo"
-			class={`fixed bottom-0 left-1/2 z-10 -translate-x-1/2 drop-shadow-2xl drop-shadow-glow/50 duration-200 ${scrollY < 200 ? 'w-2/3 max-w-96' : 'pointer-events-none w-1/3 max-w-64'}`}
+			class={`fixed bottom-0 left-1/2 z-10 -translate-x-1/2 drop-shadow-2xl drop-shadow-glow/50 duration-200 ${scrollY < 200 ? 'w-2/3 max-w-96' : 'pointer-events-none w-1/3 max-w-48'}`}
 		/>
 	</header>
 	<main>
@@ -108,11 +102,7 @@
 			<GeneratedCodeExample title="TODO" class="w-full" sourceCode="TODO" outputCode="TODO" />
 		</section>
 	</main>
-	<footer class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20">
-		<Window class="mx-auto max-w-3xl" title="credits.md">
-			<Code>
-				<Typewriter text={data.credits}></Typewriter>
-			</Code>
-		</Window>
+	<footer class="flex flex-col items-center gap-12 mx-auto p-4 max-w-prose text-center">
+		<Credits class="w-full" credits={data.credits} />
 	</footer>
 </div>
