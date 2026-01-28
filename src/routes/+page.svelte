@@ -34,13 +34,13 @@
 
 		<div class="flex flex-row flex-wrap justify-center gap-2 md:gap-7">
 			<a
-				class="bg-bg-button-base selection:bg-transparent! px-6 md:px-8 py-3 md:py-4 text-lg md:text-2xl transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 cursor-pointer"
+				class="bg-bg-button-base px-6 md:px-8 py-3 md:py-4 text-lg md:text-2xl transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 cursor-pointer select-none"
 				href="https://mcbeet.dev/getting_started/"
 			>
 				Get Started
 			</a>
 			<a
-				class="bg-bg-button-secondary selection:bg-transparent! px-6 md:px-8 py-3 md:py-4 text-lg md:text-2xl transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 cursor-pointer"
+				class="bg-bg-button-secondary px-6 md:px-8 py-3 md:py-4 text-lg md:text-2xl transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 cursor-pointer select-none"
 				href="https://mcbeet.dev/"
 			>
 				Docs
