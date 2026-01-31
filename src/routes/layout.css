@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+@plugin '@iconify/tailwind4';
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding: 20px;
+}
 
 @theme {
 	/* Fonts */

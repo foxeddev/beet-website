@@ -1,0 +1,11 @@
+{
+  "name": "My First Pack",
+  "author": "Me!",
+  "description": "I'm learning Beet",
+  "data_pack": {
+    "load": [
+      "src"
+    ]
+  },
+  "output": "build"
+}
