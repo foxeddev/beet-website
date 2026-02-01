@@ -23,8 +23,8 @@
 	<meta property="og:image" content={screenshot} />
 	<meta property="og:image:secure_url" content={screenshot} />
 	<meta property="og:image:type" content="image/png" />
-	<meta property="og:image:width" content="1920" />
-	<meta property="og:image:height" content="1080" />
+	<meta property="og:image:width" content="512" />
+	<meta property="og:image:height" content="512" />
 	<meta
 		property="og:image:alt"
 		content={'A website with a big title and description and an image of a pixel art beetroot at the bottom.'}
