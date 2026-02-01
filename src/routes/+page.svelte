@@ -7,13 +7,11 @@
 	import GeneratedCodeExample from '$lib/components/GeneratedCodeExample.svelte';
 	import Credits from '$lib/components/Credits.svelte';
 	import Window from '$lib/components/Window.svelte';
-	import { fly } from 'svelte/transition';
 	import Code from '$lib/components/Code.svelte';
 	import ConsoleCommand from '$lib/components/ConsoleCommand.svelte';
 
 	let { data } = $props();
 	let scrollY = $state(0);
-	let copied = $state(false);
 </script>
 
 <svelte:window bind:scrollY />
