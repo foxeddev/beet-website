@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.png';
-	import screenshot from '$lib/assets/screenshot.png';
+	import thumbnail from '$lib/assets/thumbnail.png';
 	import { page } from '$app/state';
 
 	let { children } = $props();
@@ -20,8 +20,8 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={page.url.toString()} />
 	<meta property="og:description" content="The Minecraft pack development kit" />
-	<meta property="og:image" content={screenshot} />
-	<meta property="og:image:secure_url" content={screenshot} />
+	<meta property="og:image" content={thumbnail} />
+	<meta property="og:image:secure_url" content={thumbnail} />
 	<meta property="og:image:type" content="image/png" />
 	<meta property="og:image:width" content="512" />
 	<meta property="og:image:height" content="512" />
