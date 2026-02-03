@@ -1,5 +1,4 @@
 <script lang="ts">
-	import logo from '$lib/assets/beet.png';
 	import for_loop_beet from '$lib/content/code_examples/for_loop/beet.mcfunction?raw';
 	import for_loop_vanilla from '$lib/content/code_examples/for_loop/vanilla.mcfunction?raw';
 	import beet_json from '$lib/content/code_examples/get_started/beet.json?raw';
@@ -9,12 +8,10 @@
 	import Window from '$lib/components/Window.svelte';
 	import Code from '$lib/components/Code.svelte';
 	import ConsoleCommand from '$lib/components/ConsoleCommand.svelte';
+	import Logo from '$lib/components/Logo.svelte';
 
 	let { data } = $props();
-	let scrollY = $state(0);
 </script>
-
-<svelte:window bind:scrollY />
 
 <div
 	id="wrapper"
@@ -54,11 +51,7 @@
 
 		<!-- Logo -->
 
-		<img
-			src={logo}
-			alt="Beet Logo"
-			class={`fixed bottom-0 left-1/2 z-10 -translate-x-1/2 drop-shadow-2xl drop-shadow-glow/50 duration-200 ${scrollY < 200 ? 'h-[calc(100vh-32rem)] max-h-96' : 'pointer-events-none h-32 md:h-48'}`}
-		/>
+		<Logo />
 	</header>
 	<main>
 		<section class="flex flex-col items-center gap-12 mx-auto my-64 p-4 max-w-prose text-center">
