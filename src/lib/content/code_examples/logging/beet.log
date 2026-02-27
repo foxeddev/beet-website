@@ -1,0 +1,6 @@
+ERROR  | mecha  Expected bracket ']' but got curly '}'.
+       | logging.mcfunction:1:29
+       |      1 |  tellraw @a[scores={foo=1, bar=2] "Hello, World!"
+       |        :                                 ^
+
+Error: Reported 1 error.
