@@ -3,5 +3,5 @@
 </script>
 
 <pre
-	class={`text-md overflow-auto p-4 text-left font-mono leading-snug md:p-6 ${type === 'secondary' ? 'bg-bg-code-secondary text-text-code-secondary selection:bg-selection-code-secondary' : 'bg-bg-code-base text-text-code-base selection:bg-selection-code-base'} ${className}`}
+	class={`text-md overflow-auto p-4 text-left font-mono leading-snug md:p-6 ${type === 'secondary' ? 'bg-code-bg-secondary' : 'bg-code-bg'} ${className}`}
 	{...props}>{@render children()}</pre>

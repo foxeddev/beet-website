@@ -3,7 +3,7 @@
 
 	let { text, ...props } = $props();
 
-	let el: HTMLElement;
+	let el: HTMLSpanElement;
 	let output = $state('');
 	let running = false;
 

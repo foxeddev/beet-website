@@ -3,47 +3,31 @@
 @plugin '@iconify/tailwind4';
 
 html {
-	scroll-behavior: smooth;
+	scroll-behavior: auto;
 	scroll-padding: 20px;
 }
 
 @theme {
-	/* Fonts */
+	/* Colors */
+	--color-text: #f7f7f7;
+	--color-text-secondary: #de7f8f;
 
+	--color-bg: #0a0507;
+	--color-bg-secondary: #101828;
+
+	--color-primary: #d62451;
+	--color-secondary: #711930;
+
+	--color-code-bg: #0e0f18;
+	--color-code-bg-secondary: #171822;
+	--color-code-text-secondary: #acabab;
+
+	--color-glow: #711930;
+
+	/* Fonts */
 	--font-sans: 'DM Sans';
 	--font-mono: 'DM Mono';
 
-	/* Colors */
-
-	--color-text-base: #f7f7f7;
-	--color-text-secondary: #de7f8f;
-	--color-text-highlight: #d62451;
-	--color-text-button-base: #f7f7f7;
-	--color-text-button-secondary: #f7f7f7;
-	--color-text-code-base: #f7f7f7;
-	--color-text-code-secondary: #acabab;
-	--color-text-code-highlight: #d62451;
-
-	--color-selection-base: #d62451;
-	--color-selection-secondary: #d62451;
-	--color-selection-highlight: #711930;
-	--color-selection-code-base: #d62451;
-	--color-selection-code-secondary: #d62451;
-	--color-selection-code-highlight: #711930;
-
-	--color-bg-base: #0a0507;
-	--color-bg-secondary: #101828;
-	--color-bg-highlight: #d62451;
-	--color-bg-button-base: #d62451;
-	--color-bg-button-secondary: #711930;
-	--color-bg-code-base: #0e0f18;
-	--color-bg-code-secondary: #171822;
-	--color-bg-code-highlight: #d62451;
-
-	--color-glow: #711930;
-}
-
-@theme {
 	--text-10xl: 10rem;
 	--text-11xl: 12rem;
 }

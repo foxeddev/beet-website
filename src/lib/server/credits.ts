@@ -7,7 +7,7 @@ let contributors: string[] | undefined;
 let lastRequest = 0;
 
 export async function getCredits() {
-	if (lastRequest < Date.now() - 1000 * 60 * 60 /* One hour */) {
+	if (lastRequest < Date.now() - 1000 * 60 * 60 /* one hour */) {
 		try {
 			if (process.env.NODE_ENV === 'production') {
 				console.debug('Fetching credits from GitHub...');

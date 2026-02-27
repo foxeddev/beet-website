@@ -4,18 +4,12 @@
 
 <div {...props}>
 	<nav
-		class={`flex w-full items-center gap-5 p-2.5 ${highlighted ? 'bg-bg-highlight selection:bg-selection-highlight!' : 'bg-bg-secondary selection:bg-selection-secondary'}`}
+		class="flex items-center gap-5 bg-bg-secondary p-2.5 w-full"
 	>
 		<div class="flex gap-2">
-			<div
-				class={`size-4 rounded-full bg-red-500 ${highlighted ? 'ring-5 ring-bg-secondary' : ''}`}
-			></div>
-			<div
-				class={`size-4 rounded-full bg-yellow-400 ${highlighted ? 'ring-5 ring-bg-secondary' : ''}`}
-			></div>
-			<div
-				class={`size-4 rounded-full bg-green-400 ${highlighted ? 'ring-5 ring-bg-secondary' : ''}`}
-			></div>
+			<div class="bg-red-500 rounded-full size-4"></div>
+			<div class="bg-yellow-400 rounded-full size-4"></div>
+			<div class="bg-green-400 rounded-full size-4"></div>
 		</div>
 		<p class="overflow-auto">
 			{title}
