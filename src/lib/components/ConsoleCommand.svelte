@@ -6,7 +6,7 @@
 	let copied = $state(false);
 </script>
 
-<div class="relative flex bg-code-bg w-fit">
+<div class={`relative flex w-fit bg-code-bg ${className}`} {...props}>
 	<span
 		class="top-0 left-0 absolute px-6 md:px-8 py-3 md:py-4 font-mono text-lg md:text-2xl pointer-events-none select-none"
 	>
