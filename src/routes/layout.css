@@ -2,11 +2,6 @@
 @plugin '@tailwindcss/typography';
 @plugin '@iconify/tailwind4';
 
-html {
-	scroll-behavior: auto;
-	scroll-padding: 20px;
-}
-
 @theme {
 	/* Colors */
 	--color-text: #f7f7f7;
