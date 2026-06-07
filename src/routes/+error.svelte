@@ -1,6 +1,7 @@
 <script lang="ts">
 	import logo from '$lib/assets/beet.png';
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 
 	let scrollY = $state(0);
 </script>
@@ -9,19 +10,19 @@
 
 <div
 	id="wrapper"
-	class="to-bg-base selection:bg-selection-base bg-radial-[circle_at_50vw_85vh] from-glow to-[80vh] text-text-base"
+	class="bg-radial-[circle_at_50vw_85vh] from-glow to-bg-base to-[80vh] text-text-base selection:bg-selection-base"
 >
-	<header class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20 w-full min-h-screen">
+	<header class="min-h-screen w-full space-y-8 p-8 md:space-y-20 md:p-12 xl:p-20">
 		<!-- Title -->
 
 		<div class="text-center">
-			<h1 class="md:text-10xl xl:text-11xl text-9xl tracking-wide">
-				Error <span class="selection:bg-selection-highlight font-bold text-text-highlight"
+			<h1 class="text-9xl tracking-wide md:text-10xl xl:text-11xl">
+				Error <span class="font-bold text-text-highlight selection:bg-selection-highlight"
 					>{page.status}</span
 				>
 			</h1>
 			<h2
-				class="font-medium text-text-secondary selection:bg-text-secondary-selection text-2xl md:text-3xl xl:text-4xl tracking-wide"
+				class="selection:bg-text-secondary-selection text-2xl font-medium tracking-wide text-text-secondary md:text-3xl xl:text-4xl"
 			>
 				{page.error?.message}
 			</h2>
@@ -31,8 +32,8 @@
 
 		<div class="flex flex-row flex-wrap justify-center gap-2 md:gap-7">
 			<a
-				class="bg-bg-button-base selection:bg-transparent! px-6 md:px-8 py-3 md:py-4 text-lg md:text-2xl transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 cursor-pointer"
-				href="/"
+				class="cursor-pointer bg-bg-button-base px-6 py-3 text-lg transition selection:bg-transparent! hover:translate-x-2 hover:-translate-y-2 active:translate-x-1 active:-translate-y-1 md:px-8 md:py-4 md:text-2xl"
+				href={resolve('/')}
 			>
 				Return To Homepage
 			</a>
