@@ -1,5 +1,4 @@
 <script lang="ts">
-	import logo from '$lib/assets/beet.png';
 	import for_loop_beet from '$lib/content/code_examples/for_loop/beet.mcfunction?raw';
 	import for_loop_vanilla from '$lib/content/code_examples/for_loop/vanilla.mcfunction?raw';
 	import logging_beet from '$lib/content/code_examples/logging/beet.log?raw';
@@ -10,26 +9,24 @@
 	import nested_commands_vanilla_nested_execute_1 from '$lib/content/code_examples/nested_commands/vanilla/nested_execute_1.mcfunction?raw';
 	import CodeComparison from '$lib/components/CodeComparison.svelte';
 	import Credits from '$lib/components/Credits.svelte';
+	import Logo from '$lib/components/Logo.svelte';
 
 	let { data } = $props();
-	let scrollY = $state(0);
 </script>
-
-<svelte:window bind:scrollY />
 
 <div
 	id="wrapper"
-	class="selection:bg-primary bg-radial-[circle_at_50vw_100vh] from-glow to-[80vh] to-bg bg-fixed text-text"
+	class="bg-radial-[circle_at_50vw_100vh] from-glow to-bg to-[80vh] bg-fixed text-text selection:bg-primary"
 >
-	<header class="space-y-8 md:space-y-20 p-8 md:p-12 xl:p-20 w-full min-h-screen">
+	<header class="min-h-screen w-full space-y-8 p-8 md:space-y-20 md:p-12 xl:p-20">
 		<!-- Title -->
 
 		<div class="text-center">
-			<h1 class="md:text-10xl xl:text-11xl text-9xl tracking-wide">
+			<h1 class="text-9xl tracking-wide md:text-10xl xl:text-11xl">
 				Meet <b class="text-primary selection:text-secondary">Beet</b>
 			</h1>
 			<h2
-				class="font-medium text-text-secondary selection:bg-text-secondary-selection text-2xl md:text-3xl xl:text-4xl tracking-wide"
+				class="selection:bg-text-secondary-selection text-2xl font-medium tracking-wide text-text-secondary md:text-3xl xl:text-4xl"
 			>
 				The Minecraft pack development kit
 			</h2>
@@ -39,32 +36,25 @@
 
 		<div class="flex flex-row flex-wrap justify-center gap-2 md:gap-7">
 			<a
-				class="bg-primary px-6 md:px-8 py-3 md:py-4 text-lg md:text-2xl transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 select-none"
+				class="bg-primary px-6 py-3 text-lg transition select-none hover:translate-x-2 hover:-translate-y-2 active:translate-x-1 active:-translate-y-1 md:px-8 md:py-4 md:text-2xl"
 				href="https://mcbeet.dev/quick-start/get-started/"
 			>
 				Get Started
 			</a>
 			<a
-				class="bg-secondary px-6 md:px-8 py-3 md:py-4 text-lg md:text-2xl transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 select-none"
+				class="bg-secondary px-6 py-3 text-lg transition select-none hover:translate-x-2 hover:-translate-y-2 active:translate-x-1 active:-translate-y-1 md:px-8 md:py-4 md:text-2xl"
 				href="https://mcbeet.dev/"
 			>
 				Docs
 			</a>
 		</div>
-
-		<!-- Logo -->
-
-		<img
-			src={logo}
-			alt="Beet Logo"
-			class={`fixed bottom-0 left-1/2 z-10 -translate-x-1/2 drop-shadow-2xl drop-shadow-glow/50 transition-all ${scrollY < 200 ? 'md:h-96 h-48 sm:h-72' : 'pointer-events-none h-32 md:h-48'}`}
-		/>
+		<Logo />
 	</header>
 	<main>
-		<section class="flex flex-col items-center gap-12 mx-auto my-64 p-4 max-w-prose text-center">
+		<section class="mx-auto my-64 flex max-w-prose flex-col items-center gap-12 p-4 text-center">
 			<div class="flex flex-col items-center gap-4">
 				<p
-					class="bg-primary selection:bg-secondary px-4 py-2 transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1"
+					class="bg-primary px-4 py-2 transition selection:bg-secondary hover:translate-x-2 hover:-translate-y-2 active:translate-x-1 active:-translate-y-1"
 				>
 					Powered by <b>Bolt</b>
 				</p>
@@ -81,10 +71,10 @@
 				output={[{ title: 'for_loop/vanilla.mcfunction', code: for_loop_vanilla }]}
 			/>
 		</section>
-		<section class="flex flex-col items-center gap-12 mx-auto my-64 p-4 max-w-prose text-center">
+		<section class="mx-auto my-64 flex max-w-prose flex-col items-center gap-12 p-4 text-center">
 			<div class="flex flex-col items-center gap-4">
 				<p
-					class="bg-primary selection:bg-secondary px-4 py-2 transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1"
+					class="bg-primary px-4 py-2 transition selection:bg-secondary hover:translate-x-2 hover:-translate-y-2 active:translate-x-1 active:-translate-y-1"
 				>
 					Powered by <b>Mecha</b>
 				</p>
@@ -102,10 +92,10 @@
 				output={[{ title: 'logging/vanilla.log', code: logging_vanilla }]}
 			/>
 		</section>
-		<section class="flex flex-col items-center gap-12 mx-auto my-64 p-4 max-w-prose text-center">
+		<section class="mx-auto my-64 flex max-w-prose flex-col items-center gap-12 p-4 text-center">
 			<div class="flex flex-col items-center gap-4">
 				<p
-					class="bg-primary selection:bg-secondary px-4 py-2 transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1"
+					class="bg-primary px-4 py-2 transition selection:bg-secondary hover:translate-x-2 hover:-translate-y-2 active:translate-x-1 active:-translate-y-1"
 				>
 					Powered by <b>Bolt</b>
 				</p>
@@ -134,7 +124,7 @@
 			/>
 		</section>
 	</main>
-	<footer class="flex flex-col items-center gap-12 mx-auto p-4 max-w-prose text-center">
+	<footer class="mx-auto flex max-w-prose flex-col items-center gap-12 p-4 text-center">
 		<Credits credits={data.credits} />
 	</footer>
 </div>
