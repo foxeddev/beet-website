@@ -1,40 +1,52 @@
 <script lang="ts">
-	import logo from '$lib/assets/beet.png';
+	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
+	import Logo from '$lib/components/Logo.svelte';
 </script>
 
 <div
 	id="wrapper"
-	class="space-y-8 md:space-y-20 selection:bg-primary bg-radial-[circle_at_50vw_100vh] from-glow to-[80vh] to-bg bg-fixed p-8 md:p-12 xl:p-20 w-full min-h-screen text-text"
+	class="min-h-screen w-full space-y-8 bg-radial-[circle_at_50vw_100vh] from-glow to-bg to-[80vh] bg-fixed p-8 text-text selection:bg-primary md:space-y-20 md:p-12 xl:p-20"
 >
 	<!-- Title -->
 
 	<div class="text-center">
-		<h1 class="md:text-10xl xl:text-11xl text-9xl tracking-wide">
+		<h1 class="text-9xl tracking-wide md:text-10xl xl:text-11xl">
 			Meet <b class="text-primary selection:text-secondary">Beet</b>
 		</h1>
 		<h2
-			class="font-medium text-text-secondary selection:bg-text-secondary-selection text-2xl md:text-3xl xl:text-4xl tracking-wide"
+			class="selection:bg-text-secondary-selection text-2xl font-medium tracking-wide text-text-secondary md:text-3xl xl:text-4xl"
 		>
 			The Minecraft pack development kit
 		</h2>
 	</div>
+	<header class="min-h-screen w-full space-y-8 p-8 md:space-y-20 md:p-12 xl:p-20">
+		<!-- Title -->
 
-	<!-- Button -->
+		<div class="text-center">
+			<h1 class="text-9xl tracking-wide md:text-10xl xl:text-11xl">
+				Error <span class="selection:bg-selection-highlight text-text-highlight font-bold"
+					>{page.status}</span
+				>
+			</h1>
+			<h2
+				class="selection:bg-text-secondary-selection text-2xl font-medium tracking-wide text-text-secondary md:text-3xl xl:text-4xl"
+			>
+				{page.error?.message}
+			</h2>
+		</div>
 
-	<div class="flex flex-row flex-wrap justify-center gap-2 md:gap-7">
-		<a
-			class="bg-primary px-6 md:px-8 py-3 md:py-4 text-lg md:text-2xl transition hover:-translate-y-2 hover:translate-x-2 active:-translate-y-1 active:translate-x-1 select-none"
-			href="/"
-		>
-			Return To Homepage
-		</a>
-	</div>
+		<!-- Button -->
 
-	<!-- Logo -->
+		<div class="flex flex-row flex-wrap justify-center gap-2 md:gap-7">
+			<a
+				class="bg-primary px-6 py-3 text-lg transition select-none hover:translate-x-2 hover:-translate-y-2 active:translate-x-1 active:-translate-y-1 md:px-8 md:py-4 md:text-2xl"
+				href={resolve('/')}
+			>
+				Return To Homepage
+			</a>
+		</div>
 
-	<img
-		src={logo}
-		alt="Beet Logo"
-		class="bottom-0 left-1/2 z-10 fixed drop-shadow-2xl drop-shadow-glow/50 h-48 sm:h-72 md:h-96 transition-all -translate-x-1/2"
-	/>
+		<Logo />
+	</header>
 </div>

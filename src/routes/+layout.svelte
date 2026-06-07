@@ -27,7 +27,7 @@
 	<meta property="og:image:height" content="512" />
 	<meta
 		property="og:image:alt"
-		content={'A website with a big title and description and an image of a pixel art beetroot at the bottom.'}
+		content="A website with a big title and description and an image of a pixel art beetroot at the bottom."
 	/>
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:site_name" content="Beet" />
