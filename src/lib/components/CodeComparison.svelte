@@ -3,20 +3,27 @@
 	import Code from './Code.svelte';
 	import { slide } from 'svelte/transition';
 
-	let { class: className = '', source, output, ...props } = $props();
+	let {
+		class: className = '',
+		source,
+		output,
+		showSecondVersionText = 'Show vanilla version',
+		hideSecondVersionText = 'Hide vanilla version',
+		...props
+	} = $props();
 
-	let showVanilla = $state();
+	let secondVersionVisible = $state();
 </script>
 
 <div class={`w-full space-y-6 ${className}`} {...props}>
-	{#each source as window}
+	{#each source as window (window.title)}
 		<Window title={window.title}>
 			<Code>{window.code}</Code>
 		</Window>
 	{/each}
-	{#if showVanilla}
+	{#if secondVersionVisible}
 		<div class="space-y-2" transition:slide>
-			{#each output as window}
+			{#each output as window (window.title)}
 				<Window title={window.title}>
 					<Code>{window.code}</Code>
 				</Window>
@@ -24,16 +31,16 @@
 		</div>
 	{/if}
 	<button
-		class="flex items-center gap-1 md:gap-2 mx-auto px-3 md:px-4 py-1 md:py-2 w-fit cursor-pointer"
-		onclick={() => (showVanilla = !showVanilla)}
+		class="mx-auto flex w-fit cursor-pointer items-center gap-1 px-3 py-1 md:gap-2 md:px-4 md:py-2"
+		onclick={() => (secondVersionVisible = !secondVersionVisible)}
 	>
-		{showVanilla ? 'Hide Vanilla Version' : 'Show Vanilla Version'}
+		{secondVersionVisible ? hideSecondVersionText : showSecondVersionText}
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="1024"
 			height="1024"
 			viewBox="0 0 1024 1024"
-			class={`size-4 transition ${showVanilla ? 'rotate-180' : 'rotate-0'}`}
+			class={`size-4 transition ${secondVersionVisible ? 'rotate-180' : 'rotate-0'}`}
 		>
 			<path
 				fill="currentColor"

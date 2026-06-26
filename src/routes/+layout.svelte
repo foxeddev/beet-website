@@ -42,4 +42,9 @@
 	/>
 </svelte:head>
 
-{@render children()}
+<div
+	id="wrapper"
+	class="min-h-dvh bg-radial-[circle_at_50vw_100vh] from-glow to-bg to-[80vh] bg-fixed text-text selection:bg-primary"
+>
+	{@render children()}
+</div>
